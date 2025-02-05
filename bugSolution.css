@@ -1,0 +1,17 @@
+The solution involves understanding and addressing CSS specificity.
+
+One approach is to modify the selectors to increase specificity where needed. For example, if it is necessary for purple to override green, we can add an ID to improve the specificity of the CSS selector.
+
+Another approach is to use the `!important` flag. This is less desirable and is less maintainable. This should be used sparingly:
+
+```css
+.container div.special {
+  color: green;
+}
+
+.container div.special {
+  color: purple !important; /* This will now override */
+}
+```
+
+The best solution is to refactor the CSS to avoid these ambiguous situations.  Ensure selectors have distinct levels of specificity to avoid unpredictable results.
